@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Too Simple Gallery</title>
+    <style>
+        .display-flex {
+            display: flex;
+            display: -webkit-flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .image-preview {
+            max-height: 25vh;
+            margin: 1em;
+        }
+    </style>
+</head>
+<body class="display-flex">
+<span style="flex-basis: 100%">
+    Too Simple Gallery by DEDZTBH
+        | <a href="#"
+             onclick="alert('Put your image in the img folder. Refresh page. Click the image preview to access full image.')">Help</a>
+        | <a href="#">Github</a>
+    </span>
+
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    let folder = "img/";
+    $.ajax({
+        url: folder,
+        success: function (data) {
+            $(data).find("a").attr("href", function (i, filename) {
+                if (filename.match(/\.(jpe?g|png|gif)$/)) {
+                    let filepath = folder + filename;
+                    $("body").append("<a href='" + filepath + "'><img src='" + filepath + "' alt='" + filename + "' class='image-preview'></a>");
+                }
+            })
+        }
+    })
+</script>
+</body>
+</html>
