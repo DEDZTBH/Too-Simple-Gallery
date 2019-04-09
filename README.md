@@ -1,4 +1,7 @@
 # Too-Simple-Gallery
+
+![alt text](https://raw.githubusercontent.com/DEDZTBH/Too-Simple-Gallery/master/demo.gif)
+
 This is a very very very simple gallery webpage that displays you pictures. It is pure HTML+JS+CSS. No PHP.
 
 I have only tested it on Chrome. 
